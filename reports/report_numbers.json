@@ -1,0 +1,381 @@
+{
+  "old_ols": {
+    "R2": 0.6565,
+    "MAE": 86606
+  },
+  "eda": {
+    "n_rows": 21613,
+    "n_cols": 21,
+    "n_dup_id": 177,
+    "missing": {
+      "sqft_above": 2
+    },
+    "price_skew": 4.024069144684714,
+    "logprice_skew": 0.42807651495749055,
+    "price_mean": 540088.1417665294,
+    "price_median": 450000.0,
+    "price_min": 75000.0,
+    "price_max": 7700000.0,
+    "price_iqr_outlier_pct": 5.302364317771711,
+    "corr": {
+      "sqft_living": 0.702,
+      "grade": 0.667,
+      "sqft_above": 0.606,
+      "sqft_living15": 0.585,
+      "bathrooms": 0.525,
+      "view": 0.397,
+      "sqft_basement": 0.324,
+      "bedrooms": 0.308,
+      "lat": 0.307,
+      "waterfront": 0.266,
+      "floors": 0.257,
+      "has_basement": 0.18,
+      "yr_renovated": 0.126,
+      "was_renovated": 0.126,
+      "sqft_lot": 0.09,
+      "sqft_lot15": 0.082,
+      "yr_built": 0.054,
+      "condition": 0.036,
+      "long": 0.022,
+      "sale_year": 0.004,
+      "sale_month": -0.01,
+      "zipcode": -0.053,
+      "house_age": -0.054
+    },
+    "waterfront_pct": 0.7541757275713691,
+    "median_by_waterfront": {
+      "0": 450000.0,
+      "1": 1400000.0
+    },
+    "median_by_grade": {
+      "1": 142000.0,
+      "3": 262000.0,
+      "4": 205000.0,
+      "5": 228700.0,
+      "6": 275276.5,
+      "7": 375000.0,
+      "8": 510000.0,
+      "9": 720000.0,
+      "10": 914327.0,
+      "11": 1284000.0,
+      "12": 1817500.0,
+      "13": 2983000.0
+    },
+    "median_by_view": {
+      "0": 432500.0,
+      "1": 690944.0,
+      "2": 675000.0,
+      "3": 802500.0,
+      "4": 1185000.0
+    },
+    "zip_median_min": [
+      98002,
+      235000.0
+    ],
+    "zip_median_max": [
+      98039,
+      1892500.0
+    ],
+    "n_zip": 70,
+    "date_min": "20140502",
+    "date_max": "20150527",
+    "bedrooms_max_row": {
+      "bedrooms": 33,
+      "sqft_living": 1620
+    },
+    "sqft_lot_skew": 13.06001895903175,
+    "sqft_living_skew": 1.471555426802092
+  },
+  "split": {
+    "train": 15119,
+    "val": 3242,
+    "test": 3241,
+    "total": 21613,
+    "n_before": 15130,
+    "n_removed": 11,
+    "thresholds": {
+      "sqft_living": 8150.0,
+      "sqft_above": 7200.0,
+      "sqft_basement": 3420.0
+    }
+  },
+  "kmeans": {
+    "k": 8,
+    "inertia": {
+      "2": 18274.98008020173,
+      "3": 11266.165378667089,
+      "4": 8897.990499094727,
+      "5": 7184.987452694642,
+      "6": 5679.860264176347,
+      "7": 4696.907034377022,
+      "8": 3875.908973739164,
+      "9": 3427.853866819258,
+      "10": 3115.985043414742,
+      "11": 2817.6379916055275,
+      "12": 2559.4035126695694
+    },
+    "silhouette": {
+      "2": 0.3849199101192556,
+      "3": 0.4326579434836674,
+      "4": 0.3886564762346804,
+      "5": 0.3854630462756783,
+      "6": 0.40421249807920745,
+      "7": 0.41461433159784045,
+      "8": 0.42789864991056065,
+      "9": 0.4226034421426464,
+      "10": 0.42090462249928695,
+      "11": 0.41789157234591157,
+      "12": 0.4210242363810267
+    }
+  },
+  "baseline_diag": {
+    "R2_log": 0.7697644556453535,
+    "F": 2523.916058206804,
+    "F_p": 0.0,
+    "JB": 486.34040845330344,
+    "JB_p": 2.4690059758614706e-106,
+    "resid_skew": 0.03584402906215566,
+    "resid_kurtosis": 3.875717296934622,
+    "BP": 707.4017158394412,
+    "BP_p": 6.008861520396538e-137,
+    "VIF_top": {
+      "sqft_living": 1000000000000.0,
+      "sqft_above": 1000000000000.0,
+      "sqft_basement": 1000000000000.0,
+      "has_basement": 3.5827859919055025,
+      "grade": 3.396777594614958
+    }
+  },
+  "best_model": "XGBoost",
+  "error_analysis": {
+    "overall_mape": 11.547733287212417,
+    "within10": 58.68559086701636,
+    "within20": 84.63437210737426,
+    "top10_threshold": 920999.9999999997,
+    "top10_n": 325,
+    "top10_mape": 14.24779810549257,
+    "top10_mae": 219291.97240384624,
+    "top10_bias_pct": -4.928004343254934,
+    "top10_under_share": 67.07692307692308,
+    "rest_mape": 11.246800137026872,
+    "rest_mae": 47223.6617128558,
+    "rest_bias_pct": 1.6400911447203195,
+    "max_price_test": 6884999.999999994
+  },
+  "importance_top": {
+    "lat": 0.5317,
+    "sqft_living": 0.1699,
+    "grade": 0.1308,
+    "long": 0.043,
+    "sqft_lot": 0.0407,
+    "zipcode": 0.0405,
+    "house_age": 0.0182,
+    "sqft_living15": 0.015,
+    "view": 0.0142,
+    "condition": 0.0119
+  },
+  "results": [
+    {
+      "Model": "Linear Regression",
+      "CV_RMSE_log": 0.18056,
+      "CV_std": 0.00319,
+      "Train_MAE": 72985.61133,
+      "Train_MSE": 16354196412.53695,
+      "Train_RMSE": 127883.52674,
+      "Train_R2": 0.86648,
+      "Train_MAPE": 13.52073,
+      "Val_MAE": 76731.47911,
+      "Val_MSE": 19762132172.03857,
+      "Val_RMSE": 140577.85093,
+      "Val_R2": 0.8461,
+      "Val_MAPE": 14.34424,
+      "Test_MAE": 76383.40537,
+      "Test_MSE": 18994863036.01624,
+      "Test_RMSE": 137821.85253,
+      "Test_R2": 0.87837,
+      "Test_MAPE": 13.90222,
+      "Seconds": 0.82175
+    },
+    {
+      "Model": "Ridge",
+      "CV_RMSE_log": 0.18056,
+      "CV_std": 0.00318,
+      "Train_MAE": 72988.2713,
+      "Train_MSE": 16351085125.189,
+      "Train_RMSE": 127871.36163,
+      "Train_R2": 0.8665,
+      "Train_MAPE": 13.52102,
+      "Val_MAE": 76717.46343,
+      "Val_MSE": 19754276255.93152,
+      "Val_RMSE": 140549.90664,
+      "Val_R2": 0.84616,
+      "Val_MAPE": 14.34163,
+      "Test_MAE": 76377.97567,
+      "Test_MSE": 18966389758.87789,
+      "Test_RMSE": 137718.5164,
+      "Test_R2": 0.87856,
+      "Test_MAPE": 13.9021,
+      "Seconds": 2.1445
+    },
+    {
+      "Model": "Lasso",
+      "CV_RMSE_log": 0.1813,
+      "CV_std": 0.00293,
+      "Train_MAE": 73431.96212,
+      "Train_MSE": 16375324865.53069,
+      "Train_RMSE": 127966.10827,
+      "Train_R2": 0.8663,
+      "Train_MAPE": 13.6032,
+      "Val_MAE": 76594.91894,
+      "Val_MSE": 19690130103.98312,
+      "Val_RMSE": 140321.52402,
+      "Val_R2": 0.84666,
+      "Val_MAPE": 14.33217,
+      "Test_MAE": 76593.2504,
+      "Test_MSE": 18470609435.57046,
+      "Test_RMSE": 135906.62028,
+      "Test_R2": 0.88173,
+      "Test_MAPE": 13.972,
+      "Seconds": 166.02652
+    },
+    {
+      "Model": "Decision Tree",
+      "CV_RMSE_log": 0.2139,
+      "CV_std": 0.00567,
+      "Train_MAE": 71692.75959,
+      "Train_MSE": 17989905187.05126,
+      "Train_RMSE": 134126.45223,
+      "Train_R2": 0.85312,
+      "Train_MAPE": 12.84329,
+      "Val_MAE": 87513.36755,
+      "Val_MSE": 28347001043.42254,
+      "Val_RMSE": 168365.67656,
+      "Val_R2": 0.77924,
+      "Val_MAPE": 16.12552,
+      "Test_MAE": 92802.69167,
+      "Test_MSE": 32900921843.06238,
+      "Test_RMSE": 181386.1126,
+      "Test_R2": 0.78933,
+      "Test_MAPE": 16.1635,
+      "Seconds": 8.51596
+    },
+    {
+      "Model": "Random Forest",
+      "CV_RMSE_log": 0.17441,
+      "CV_std": 0.00508,
+      "Train_MAE": 25849.92746,
+      "Train_MSE": 2692270041.61088,
+      "Train_RMSE": 51887.08935,
+      "Train_R2": 0.97802,
+      "Train_MAPE": 4.55332,
+      "Val_MAE": 69590.05083,
+      "Val_MSE": 17912687605.3466,
+      "Val_RMSE": 133838.28901,
+      "Val_R2": 0.8605,
+      "Val_MAPE": 12.90747,
+      "Test_MAE": 72115.6073,
+      "Test_MSE": 19442063688.99293,
+      "Test_RMSE": 139434.80085,
+      "Test_R2": 0.87551,
+      "Test_MAPE": 12.7399,
+      "Seconds": 41.03672
+    },
+    {
+      "Model": "XGBoost",
+      "CV_RMSE_log": 0.15916,
+      "CV_std": 0.003,
+      "Train_MAE": 48156.6631,
+      "Train_MSE": 5825557537.83684,
+      "Train_RMSE": 76325.34008,
+      "Train_R2": 0.95244,
+      "Train_MAPE": 9.3757,
+      "Val_MAE": 62529.51626,
+      "Val_MSE": 11934929839.12188,
+      "Val_RMSE": 109247.10449,
+      "Val_R2": 0.90706,
+      "Val_MAPE": 12.07039,
+      "Test_MAE": 64478.27479,
+      "Test_MSE": 17125087563.60359,
+      "Test_RMSE": 130862.85785,
+      "Test_R2": 0.89035,
+      "Test_MAPE": 11.54773,
+      "Seconds": 27.37387
+    },
+    {
+      "Model": "KNN",
+      "CV_RMSE_log": 0.21058,
+      "CV_std": 0.00413,
+      "Train_MAE": 0.17242,
+      "Train_MSE": 206.69647,
+      "Train_RMSE": 14.37694,
+      "Train_R2": 1.0,
+      "Train_MAPE": 5e-05,
+      "Val_MAE": 88091.71444,
+      "Val_MSE": 31249017646.448,
+      "Val_RMSE": 176773.91676,
+      "Val_R2": 0.75664,
+      "Val_MAPE": 15.55216,
+      "Test_MAE": 91951.34032,
+      "Test_MSE": 34535377337.97654,
+      "Test_RMSE": 185836.9644,
+      "Test_R2": 0.77887,
+      "Test_MAPE": 15.47442,
+      "Seconds": 4.92136
+    },
+    {
+      "Model": "MLP",
+      "CV_RMSE_log": 0.19674,
+      "CV_std": 0.00289,
+      "Train_MAE": 70278.05817,
+      "Train_MSE": 14939018236.46489,
+      "Train_RMSE": 122225.27659,
+      "Train_R2": 0.87803,
+      "Train_MAPE": 13.21888,
+      "Val_MAE": 83424.42545,
+      "Val_MSE": 30300031508.41293,
+      "Val_RMSE": 174069.04236,
+      "Val_R2": 0.76403,
+      "Val_MAPE": 15.51363,
+      "Test_MAE": 84835.40418,
+      "Test_MSE": 27146969167.66659,
+      "Test_RMSE": 164763.37326,
+      "Test_R2": 0.82618,
+      "Test_MAPE": 15.33916,
+      "Seconds": 107.03625
+    }
+  ],
+  "best_params": {
+    "Linear Regression": {},
+    "Ridge": {
+      "alpha": 0.1
+    },
+    "Lasso": {
+      "alpha": 0.0001
+    },
+    "Decision Tree": {
+      "max_depth": 16,
+      "min_samples_leaf": 20
+    },
+    "Random Forest": {
+      "max_depth": null,
+      "min_samples_leaf": 1,
+      "n_estimators": 200
+    },
+    "XGBoost": {
+      "learning_rate": 0.06,
+      "max_depth": 4,
+      "n_estimators": 800
+    },
+    "KNN": {
+      "n_neighbors": 10,
+      "weights": "distance"
+    },
+    "MLP": {
+      "alpha": 0.01,
+      "hidden_layer_sizes": [
+        64,
+        32
+      ]
+    }
+  }
+}
